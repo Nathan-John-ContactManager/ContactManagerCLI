@@ -60,4 +60,17 @@ public class ContactManagerMethods {
         }
     }
 
-}
+
+        public void deleteContact() throws IOException {
+            contactsData = Files.readAllLines(contactsPath);
+            System.out.println("Enter Name");
+            Scanner sc = new Scanner(System.in);
+            String deletePerson = sc.next();
+
+            contactsData.removeIf(contactsData -> contactsData.toLowerCase().contains(deletePerson.toLowerCase()));
+
+            Files.write(contactsPath, contactsData);
+        }
+
+    }
+
