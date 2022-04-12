@@ -26,11 +26,11 @@ public class ContactsTest {
         for (String line : fileData) {
             System.out.println(line);
         }
-        try {
-            fileData.add("Whats up");
-            Files.write(contactsPath, fileData);
-        } catch (IOException e) {
-            System.out.println("Trashhhh");
+//        try {
+//            fileData.add("Whats up");
+//            Files.write(contactsPath, fileData);
+//        } catch (IOException e) {
+//            System.out.println("Trashhhh");
         }
     }
-}
+
