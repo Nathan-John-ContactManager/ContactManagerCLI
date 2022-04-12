@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 import java.util.Scanner;
@@ -70,6 +71,23 @@ public class ContactManagerMethods {
             contactsData.removeIf(contactsData -> contactsData.toLowerCase().contains(deletePerson.toLowerCase()));
 
             Files.write(contactsPath, contactsData);
+        }
+
+        public void editContact()throws  IOException{
+        contactsData = Files.readAllLines(contactsPath);
+            System.out.println("Enter name or number to edit");
+            displayContacts();
+            List<String> newList = new ArrayList<>();
+            for (String contacts : contactsData ) {
+                if (contacts.equals("milk")) {
+                    newList.add("cream");
+                    continue;
+                }
+                newList.add(contacts);
+            }
+
+            Files.write(Paths.get("data", "contacts.txt"), newList);
+
         }
 
     }
