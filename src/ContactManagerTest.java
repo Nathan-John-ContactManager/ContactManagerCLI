@@ -16,7 +16,7 @@ public class ContactManagerTest {
             System.out.println("3. Search a Contact By Name");
             System.out.println("4. Delete an Existing Contact by Name");
             System.out.println("5. Edit a Contact");
-            System.out.println("Exit");
+            System.out.println("6. Exit");
             System.out.println("Enter an option 1, 2, 3, 4, 5, 6");
             userInput = sc1.nextInt();
             if(userInput == 1) utilities.displayContacts();
